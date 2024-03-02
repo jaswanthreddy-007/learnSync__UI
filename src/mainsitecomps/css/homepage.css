@@ -1,0 +1,21 @@
+.homecontent {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax value for card width */
+  grid-gap: 20px; /* Adjust the gap between cards */
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card {
+  /* Add card styling here */
+}
+
+/* Additional styles for card content, header, footer, etc. */

@@ -1,0 +1,48 @@
+.statscontent{
+    margin-top: 75px;
+    padding: 15px;
+}
+.barchart{
+    width: 70%;
+    height:fit-content;
+    /* background-color:white; */
+    margin: 5px;
+}
+.piechart{
+    width: 30%;
+    height: fit-content;
+    /* background-color: aliceblue; */
+}
+.barchart {
+transition: .5s ease;
+}
+
+.barchart:hover{
+box-shadow:
+1px 1px #a9a9a9,
+2px 2px #a9a9a9,
+3px 3px #a9a9a9,
+4px 4px #a9a9a9,
+5px 5px #a9a9a9,
+6px 6px #a9a9a9;
+-webkit-transform: translateX(-3px);
+transform: translateX(-3px);
+transition: .5s ease;
+}
+
+.piechart {
+transition: .5s ease;
+}
+
+.piechart:hover{
+box-shadow:
+1px 1px #a9a9a9,
+2px 2px #a9a9a9,
+3px 3px #a9a9a9,
+4px 4px #a9a9a9,
+5px 5px #a9a9a9,
+6px 6px #a9a9a9;
+-webkit-transform: translateX(-3px);
+transform: translateX(-3px);
+transition: .5s ease;
+}

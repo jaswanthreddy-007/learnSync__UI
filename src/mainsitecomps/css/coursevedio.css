@@ -1,0 +1,71 @@
+/* App.css */
+.App {
+    margin-top: 0px;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+#player {
+  float: left;
+  margin-right: 20px;
+}
+
+.playlist-url a {
+  color: lightblue;
+}
+
+.playlist {
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  /* Arrange items in a column */
+  justify-content: flex-end;
+  /* Align items to the flex-end (right side) */
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card a {
+  display: flex;
+  align-items: flex-start;
+  /* Align items to the top */
+  text-decoration: none;
+  color: #fff;
+  /* Text color for playlist items */
+}
+
+.card img {
+  max-width: 80px;
+  /* Adjust the thumbnail width as needed */
+  height: auto;
+  margin-right: 10px;
+}
+
+.card-info {
+  flex: 1;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 16px;
+  word-wrap: break-word;
+  /* Allow title to wrap to next line */
+}
+
+.questions {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #fff;
+  /* Border color for questions section */
+}
+
+.question {
+  margin-bottom: 10px;
+}
