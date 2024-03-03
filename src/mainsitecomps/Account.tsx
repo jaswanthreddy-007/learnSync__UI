@@ -5,6 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import {
   Card,
+  Card2,
   CardContent,
   CardDescription,
   CardFooter,
@@ -90,7 +91,7 @@ const Account = () => {
             </TabsList>
             <TabsContent value="overview" className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card>
+                <Card2>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                       Total Hours spent studying
@@ -114,8 +115,8 @@ const Account = () => {
                       +20.1% from last month
                     </p>
                   </CardContent>
-                </Card>
-                <Card>
+                </Card2>
+                <Card2>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                       No: of courses opted till now
@@ -141,8 +142,8 @@ const Account = () => {
                       {/* +180.1% from last month */}
                     </p>
                   </CardContent>
-                </Card>
-                <Card>
+                </Card2>
+                <Card2>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                       No:of courses completed
@@ -167,8 +168,8 @@ const Account = () => {
                       {/* +19% from last month */}
                     </p>
                   </CardContent>
-                </Card>
-                <Card>
+                </Card2>
+                <Card2>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                       Best class rank
@@ -192,7 +193,7 @@ const Account = () => {
                       5 months ago
                     </p>
                   </CardContent>
-                </Card>
+                </Card2>
               </div>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
                 <Card className="col-span-4 ">
@@ -217,13 +218,14 @@ const Account = () => {
           </Tabs>
         </div>
       ) : (
-        <div
-          style={{
-            width: "100px",
-            margin: "auto",
-          }}
-        >
-          <LoaderCOmp />
+        <div className="flex flex-col space-y-3 m-5">
+          <Skeleton className="h-[125px] w-1500 rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-40 w-[450px]" />
+            <Skeleton className="h-4 w-[1200px]" />
+            <Skeleton className="h-4 w-[1200px]" />
+            <Skeleton className="h-4 w-[1200px]" />
+          </div>
         </div>
       )}
     </div>

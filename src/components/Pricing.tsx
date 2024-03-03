@@ -72,7 +72,7 @@ export const Pricing = () => {
       <h3 className="text-xl text-center text-muted-foreground pt-4 pb-8">
         Explore our generous plans
       </h3>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 pl-20 pr-20 gap-8">
         {pricingList.map((pricing: PricingProps) => (
           <Card
             key={pricing.title}

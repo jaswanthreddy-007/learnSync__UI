@@ -3,10 +3,7 @@ import pilot from "../assets/pilot.png";
 
 export const About = () => {
   return (
-    <section
-      id="about"
-      className="container py-24 sm:py-32"
-    >
+    <section id="about" className="container py-24 sm:py-32">
       <div className="bg-muted/50 border rounded-lg py-12">
         <div className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12">
           <img
@@ -23,11 +20,13 @@ export const About = () => {
                 Project
               </h2>
               <p className="text-xl text-muted-foreground mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit.
+                In a world inundated with generic educational content, our
+                project stands out as a beacon of tailored learning experiences.
+                By leveraging advanced technologies like Federated Learning, we
+                ensure that every user receives recommendations curated just for
+                them. No more sifting through irrelevant courses or struggling
+                with concepts that don't resonate – our platform understands
+                your unique needs and guides you towards success.
               </p>
             </div>
 

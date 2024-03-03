@@ -10,21 +10,21 @@ interface ServiceProps {
 
 const serviceList: ServiceProps[] = [
   {
-    title: "Code Collaboration",
+    title: "Personalized Learning",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+      "Say goodbye to cookie-cutter education. Our platform analyzes your interactions and recommends courses that match your interests and learning pace.",
     icon: <ChartIcon />,
   },
   {
-    title: "Project Management",
+    title: "Privacy Protection",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+      "Your data is precious, and we treat it with the utmost care. With Federated Learning,",
     icon: <WalletIcon />,
   },
   {
-    title: "Task Automation",
+    title: "Continuous Improvement:",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+      "We're committed to making learning better every day. By gathering feedback and refining our recommendation models.",
     icon: <MagnifierIcon />,
   },
 ];

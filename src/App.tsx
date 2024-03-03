@@ -15,6 +15,7 @@ import Account from "./mainsitecomps/Account";
 import CourseVedio from "./mainsitecomps/CourseVedio";
 import SignUpPage from "./mainsitecomps/signup";
 import LoginPage from "./mainsitecomps/login";
+import Schedule from "./mainsitecomps/Schedule";
 function App() {
   return (
     <Router>
@@ -26,7 +27,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/stats" element={<StatsPage />} />
         <Route path="/test" element={<TestPage />} />
-        <Route path="/external" element={<External />} />
+        <Route path="/schedule" element={<Schedule />} />
         <Route path="/account" element={<Account />} />
         {/* <Route path="/course" element={<Course />} /> */}
         <Route path="/course/:courseName" element={<CourseVedio />} />

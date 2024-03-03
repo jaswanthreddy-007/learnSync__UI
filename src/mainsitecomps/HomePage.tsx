@@ -37,25 +37,12 @@ const HomePage = () => {
         <div>
           <div className="card-container">
             {courses.map((course, index) => (
-              <Link to={`/course/${course}`} className="card-link">
-                <Card className="w-[380px]">
-                  <CardHeader className="">
-                    <CardTitle>{course}</CardTitle>
-                  </CardHeader>
-                  {/* <CardContent className="grid gap-4">
-                    <div className="card">
-                      <div className="card-body">
-                        <h5 className="card-title">{course}</h5>
-                      
-                      </div>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                  <Button className="w-full">
-                    <Check className="mr-2 h-4 w-4" /> Mark all as read
-                  </Button>
-                </CardFooter> */}
-                </Card>
+              <Link to={`/course/${course}`} className="card-link" key={index}>
+                <div className="w-[380px] h-[200px] bg-gradient-to-br from-gray-900 to-rose-900 rounded-lg overflow-hidden shadow-lg relative">
+                  <div className="flex justify-center items-center h-full">
+                    <p className="text-white text-3xl font-bold">{course.toUpperCase()}</p>
+                  </div>
+                </div>
               </Link>
             ))}
             {courses.length === 0 && <p>No courses opted yet.</p>}

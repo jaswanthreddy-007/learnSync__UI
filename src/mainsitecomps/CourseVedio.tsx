@@ -97,38 +97,36 @@ const CourseVedio = () => {
             </div>
           </div>
         </div>
+        <div className="card-container flex flex-col items-end p-2">
+          {playlistItems &&
+            playlistItems.map((item) => (
+              // <li key={item.id} className="card">
 
-        {playlistItems &&
-          playlistItems.map((item) => (
-            // <li key={item.id} className="card">
+              //   <a
+              //     href={`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`}
+              //   >
+              //     <img src={item.snippet.thumbnails.medium.url} alt="" />
+              //     <div className="card-info">
+              //       <h3>{item.snippet.title}</h3>
+              //     </div>
+              //   </a>
+              // </li>
 
-            //   <a
-            //     href={`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`}
-            //   >
-            //     <img src={item.snippet.thumbnails.medium.url} alt="" />
-            //     <div className="card-info">
-            //       <h3>{item.snippet.title}</h3>
-            //     </div>
-            //   </a>
-            // </li>
-
-            <Card key={item.id} className="w-[600px]">
-              <CardHeader className="">
-                <CardTitle>{}</CardTitle>
-              </CardHeader>
-              <CardContent className="grid gap-4">
-                <a
-                  href={`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`}
-                >
-                  <img src={item.snippet.thumbnails.medium.url} alt="" />
-                  <div className="card-info">
-                    <h3>{item.snippet.title}</h3>
-                  </div>
-                </a>
-              </CardContent>
-              <CardFooter></CardFooter>
-            </Card>
-          ))}
+              <Card key={item.id} className="w-[400px]">
+                <CardHeader className="">
+                  <CardTitle>{}</CardTitle>
+                </CardHeader>
+                <CardContent className="grid gap-4 flex items-center justify-center">
+                  <a
+                    href={`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`}
+                  >
+                    <img src={item.snippet.thumbnails.medium.url} alt="" />
+                  </a>
+                </CardContent>
+                <CardFooter>{item.snippet.title}</CardFooter>
+              </Card>
+            ))}
+        </div>
       </div>
     </>
   );
