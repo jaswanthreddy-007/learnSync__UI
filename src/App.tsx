@@ -29,6 +29,8 @@ function App() {
         <Route path="/test" element={<TestPage />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/external" element={<External />} />
+
         {/* <Route path="/course" element={<Course />} /> */}
         <Route path="/course/:courseName" element={<CourseVedio />} />
       </Routes>
