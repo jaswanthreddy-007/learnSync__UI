@@ -16,7 +16,7 @@ import { Testimonials } from "../components/Testimonials";
 
 function App() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <Sponsors />
@@ -31,7 +31,7 @@ function App() {
       <FAQ />
       <Footer />
       <ScrollToTop />
-    </>
+    </div>
   );
 }
 
