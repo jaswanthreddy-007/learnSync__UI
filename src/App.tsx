@@ -16,6 +16,7 @@ import CourseVedio from "./mainsitecomps/CourseVedio";
 import SignUpPage from "./mainsitecomps/signup";
 import LoginPage from "./mainsitecomps/login";
 import Schedule from "./mainsitecomps/Schedule";
+import GatherInfo from "./mainsitecomps/GatherInfo";
 function App() {
   return (
     <Router>
@@ -30,6 +31,7 @@ function App() {
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/account" element={<Account />} />
         <Route path="/external" element={<External />} />
+        <Route path="/gatherinfo" element={<GatherInfo/>}/>
 
         {/* <Route path="/course" element={<Course />} /> */}
         <Route path="/course/:courseName" element={<CourseVedio />} />

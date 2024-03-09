@@ -27,7 +27,7 @@ function SignUpPage() {
         email,
         password,
       });
-      window.location.href = "/login";
+      window.location.href = "/gatherinfo";
     } catch (error) {
       console.error("Signup failed:", error);
     }
