@@ -13,20 +13,53 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
 
 
 function GatherInfo() {
-  const [username, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [college, setCollege] = useState("");
+  const [semester, setSemester] = useState("");
+  const [branch, setBranch] = useState("");
+  const [searchText, setSearchText] = useState("");
+  const [courses, setCourses] = useState([
+    { id: 1, name: "DSA" },
+    { id: 2, name: "PYTHON" },
+    { id: 3, name: "DBMS" },
+    { id: 4, name: "DIP" },
 
-  const handleSubmit = async (e: React.FormEvent) => {
+    // Add more courses here
+  ]);
+  const [optedCourses, setOptedCourses] = useState([]);
+  const username = sessionStorage.getItem("username");
+  // console.log(username)
+
+
+  // Function to handle course selection
+  const handleCourseSelect = (course) => {
+    setOptedCourses([...optedCourses, course]);
+  };
+
+  // Function to handle search input change
+  const handleSearchInputChange = (event) => {
+    setSearchText(event.target.value);
+  };
+
+  // Filter courses based on search text
+  const filteredCourses = courses.filter((course) =>
+    course.name.toLowerCase().includes(searchText.toLowerCase())
+  );
+
+
+  const handleSubmit = async () => {
     e.preventDefault();
     try {
-      await axios.post("http://127.0.0.1:5000/api/signup", {
-        name,
-        email,
-        password,
+      await axios.post("http://127.0.0.1:5000/api/gatherinfo", {
+        user,
+        college,
+        semester,
+        branch,
+        optedCourses,
       });
       window.location.href = "/gatherinfo";
     } catch (error) {
@@ -38,9 +71,9 @@ function GatherInfo() {
     <div className="flex h-screen">
       <div className="w-1/3 text-5xl font-extrabold bg-gradient-to-br from-gray-900 to-gray-600 flex justify-center pt-20">
         <h1 className="inline">
-          Hii{" "}
+          {/* Hii{" "} */}
           <span className="inline  bg-gradient-to-r from-[#f6f6f6]  to-[#21279d] text-transparent bg-clip-text">
-            Jaswanth
+            {/* Jaswanth */}
           </span>{" "}
         </h1>{" "}
       </div>
@@ -57,29 +90,55 @@ function GatherInfo() {
               <form onSubmit={handleSubmit}>
                 <div className="grid w-full items-center gap-4">
                   <div className="flex flex-col space-y-1.5">
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name">College Name</Label>
                     <Input
                       id="name"
-                      placeholder="Enter your Name"
-                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your college name"
+                      onChange={(e) => setCollege(e.target.value)}
                     />
                   </div>
                   <div className="flex flex-col space-y-1.5">
-                    <Label htmlFor="name">Email</Label>
+                    <Label htmlFor="name">Semester</Label>
                     <Input
                       id="name"
-                      placeholder="Enter your email"
-                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your semester"
+                      onChange={(e) => setSemester(e.target.value)}
                     />
                   </div>
                   <div className="flex flex-col space-y-1.5">
-                    <Label htmlFor="name">Password</Label>
+                    <Label htmlFor="name">Branch</Label>
                     <Input
                       id="name"
-                      type="password"
-                      placeholder="Enter your password"
-                      onChange={(e) => setPassword(e.target.value)}
+                      type="text"
+                      placeholder="Enter your branch"
+                      onChange={(e) => setBranch(e.target.value)}
                     />
+                  </div>
+                  <div className="flex flex-col space-y-1.5">
+                    <Label htmlFor="name">Choose Some Courses</Label>
+                    <Input
+                      type="text"
+                      placeholder="Search for courses"
+                      value={searchText}
+                      onChange={handleSearchInputChange}
+                    />
+                    <br></br>
+                    <ul className="flex flex-wrap">
+                      {searchText &&
+                        filteredCourses.map((course) => (
+                          <li key={course.id} className="w-1/3 px-2 mb-4">
+                            <Button className="font-bold" onClick={() => handleCourseSelect(course)}>
+                              + {course.name}
+                            </Button>
+                          </li>
+                        ))}
+                    </ul>
+                    <h2>Opted Courses:</h2>
+                    <ul>
+                      {optedCourses.map((course) => (
+                        <li key={course.id}>{course.name}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </form>

@@ -19,15 +19,22 @@ function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post("http://127.0.0.1:5000/api/signup", {
+      const response = await axios.post("http://127.0.0.1:5000/api/signup", {
         name,
         email,
         password,
       });
-      window.location.href = "/gatherinfo";
+      if (response.data.success) {
+        sessionStorage.setItem("username", email);
+        window.location.href = "/gatherinfo";
+      } else {
+        console.error("Login failed:", response.data.message);
+      }
     } catch (error) {
       console.error("Signup failed:", error);
     }
@@ -48,7 +55,7 @@ function SignUpPage() {
                 <Input
                   id="name"
                   placeholder="Enter your Name"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="flex flex-col space-y-1.5">

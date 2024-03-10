@@ -38,8 +38,7 @@ const HomePage = () => {
     <>
       <Navbar />
       <div className="homecontent">
-        <h2>Opted Courses</h2>
-        <br></br>
+        <h1 className="text-2xl font-bold font-mono">Opted Courses</h1>
         <div>
           <div className="card-container">
             {courses.map((course, index) => (
@@ -57,8 +56,10 @@ const HomePage = () => {
           </div>
         </div>
         <br></br>
+        <br></br>
+
         <div>
-          <h2>Recommendations</h2>
+          <h2 className="text-2xl font-bold font-mono">Recommendations</h2>
           <div className="card-container">
             {recommendations.map((recommend, index) => (
               <Link
@@ -79,8 +80,10 @@ const HomePage = () => {
           </div>
         </div>
         <br></br>
+        <br></br>
+
         <div>
-          <h2>Popular courses</h2>
+          <h2 className="text-2xl font-bold font-mono">Popular courses</h2>
           <div className="card-container">
             {popular_courses.map((course, index) => (
               <Link to={`/course/${course}`} className="card-link" key={index}>

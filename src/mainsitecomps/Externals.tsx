@@ -22,7 +22,7 @@ const External = () => {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // State variable for loading state
-
+  const useremail = sessionStorage.getItem("username");
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
@@ -60,6 +60,7 @@ const External = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
+            username:useremail,
             testName: test.name,
             answers: answers,
           }),
