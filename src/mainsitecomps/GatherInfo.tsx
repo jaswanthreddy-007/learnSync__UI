@@ -10,11 +10,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Link } from "react-router-dom";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
 
 
 function GatherInfo() {
@@ -34,15 +32,19 @@ function GatherInfo() {
   const username = sessionStorage.getItem("username");
   // console.log(username)
 
-
   // Function to handle course selection
-  const handleCourseSelect = (course) => {
-    setOptedCourses([...optedCourses, course]);
+  const handleCourseSelect = (event) => {
+    const courseName = event.target.value;
+    if (event.target.checked) {
+      setOptedCourses([...optedCourses, courseName]);
+    } else {
+      setOptedCourses(optedCourses.filter((course) => course !== courseName));
+    }
   };
 
   // Function to handle search input change
-  const handleSearchInputChange = (event) => {
-    setSearchText(event.target.value);
+  const handleSearchInputChange = (searchevent) => {
+    setSearchText(searchevent.target.value);
   };
 
   // Filter courses based on search text
@@ -50,18 +52,17 @@ function GatherInfo() {
     course.name.toLowerCase().includes(searchText.toLowerCase())
   );
 
-
   const handleSubmit = async () => {
-    e.preventDefault();
+    // e.preventDefault();
     try {
-      await axios.post("http://127.0.0.1:5000/api/gatherinfo", {
-        user,
+      const res = await axios.post("http://127.0.0.1:5000/api/gatherinfo", {
+        username,
         college,
         semester,
         branch,
         optedCourses,
       });
-      window.location.href = "/gatherinfo";
+      window.location.href = "/home";
     } catch (error) {
       console.error("Signup failed:", error);
     }
@@ -127,16 +128,22 @@ function GatherInfo() {
                       {searchText &&
                         filteredCourses.map((course) => (
                           <li key={course.id} className="w-1/3 px-2 mb-4">
-                            <Button className="font-bold" onClick={() => handleCourseSelect(course)}>
-                              + {course.name}
-                            </Button>
+                            
+                            <label>
+                              <input
+                                type="checkbox"
+                                value={course.name.toLowerCase()}
+                                onChange={handleCourseSelect}
+                              />{" "}
+                              {course.name}
+                            </label>
                           </li>
                         ))}
                     </ul>
                     <h2>Opted Courses:</h2>
                     <ul>
-                      {optedCourses.map((course) => (
-                        <li key={course.id}>{course.name}</li>
+                      {optedCourses.map((course, index) => (
+                        <li key={index}>{course}</li>
                       ))}
                     </ul>
                   </div>
@@ -154,13 +161,3 @@ function GatherInfo() {
 }
 
 export default GatherInfo;
-
-
-
-
-
-
-
-
-
-
