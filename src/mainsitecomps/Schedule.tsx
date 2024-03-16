@@ -12,8 +12,9 @@ const Schedule = () => {
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
           events={[
-            { title: "DSA exam (Internal 2)", date: "2024-03-03" },
-            { title: "Maths exam (Internal 2)", date: "2024-03-04" },
+            { title: "DSA exam (Internal)", date: "2024-03-03" },
+            { title: "DBMS exam (Internal)", date: "2024-03-04" },
+            {title:"Maths exam (Internal)",date:"2024-03-13"}
           ]}
         />
       </div>

@@ -8,10 +8,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-
 interface TeamProps {
   imageUrl: string;
   name: string;
+  punchline:string;
   position: string;
   socialNetworks: SociaNetworkslProps[];
 }
@@ -23,12 +23,13 @@ interface SociaNetworkslProps {
 
 const teamList: TeamProps[] = [
   {
-    imageUrl: "https://i.pravatar.cc/150?img=35",
+    imageUrl: "/sand.jpg",
     name: "K Sai Sandeep",
+    punchline:"knowledge is divine",
     position: "Backend Engineer",
     socialNetworks: [
       { name: "Linkedin", url: "http://linkedin.com" },
-      
+
       {
         name: "Instagram",
         url: "https://www.instagram.com/",
@@ -36,12 +37,13 @@ const teamList: TeamProps[] = [
     ],
   },
   {
-    imageUrl: "https://i.pravatar.cc/150?img=60",
+    imageUrl: "/shrey.jpg",
     name: "Shreyas R S",
+    punchline:"I'm Batman 🦇",
     position: "Backend Engineer",
     socialNetworks: [
       { name: "Linkedin", url: "http://linkedin.com" },
-      
+
       {
         name: "Instagram",
         url: "https://www.instagram.com/",
@@ -49,8 +51,9 @@ const teamList: TeamProps[] = [
     ],
   },
   {
-    imageUrl: "https://i.pravatar.cc/150?img=36",
+    imageUrl: "/jas.jpg",
     name: "S Jaswanth Reddy",
+    punchline:"All glory for the brave",
     position: "Frontend Developer",
     socialNetworks: [
       { name: "Linkedin", url: "http://linkedin.com" },
@@ -62,9 +65,10 @@ const teamList: TeamProps[] = [
     ],
   },
   {
-    imageUrl: "https://i.pravatar.cc/150?img=17",
+    imageUrl: "/vivek.jpg",
     name: "Vivek Pandith D V",
     position: "Frontend Developer",
+    punchline:"The world can't help but change around us",
     socialNetworks: [
       { name: "Linkedin", url: "http://linkedin.com" },
       {
@@ -90,10 +94,7 @@ export const Team = () => {
   };
 
   return (
-    <section
-      id="team"
-      className="container py-24 sm:py-32"
-    >
+    <section id="team" className="container py-24 sm:py-32">
       <h2 className="text-3xl md:text-4xl font-bold">
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Our Dedicated{" "}
@@ -107,7 +108,7 @@ export const Team = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-10">
         {teamList.map(
-          ({ imageUrl, name, position, socialNetworks }: TeamProps) => (
+          ({ imageUrl, name,punchline, position, socialNetworks }: TeamProps) => (
             <Card
               key={name}
               className="bg-muted/50 relative mt-8 flex flex-col justify-center items-center"
@@ -116,7 +117,7 @@ export const Team = () => {
                 <img
                   src={imageUrl}
                   alt={`${name} ${position}`}
-                  className="absolute -top-12 rounded-full w-24 h-24 aspect-square object-cover"
+                  className="absolute -top-[70px] rounded-[40px] w-[110px] h-[110px] aspect-square object-cover"
                 />
                 <CardTitle className="text-center">{name}</CardTitle>
                 <CardDescription className="text-primary">
@@ -125,7 +126,7 @@ export const Team = () => {
               </CardHeader>
 
               <CardContent className="text-center pb-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>{punchline}</p>
               </CardContent>
 
               <CardFooter>
