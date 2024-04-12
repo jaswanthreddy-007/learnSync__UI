@@ -20,19 +20,19 @@ const features: FeatureProps[] = [
   {
     title: "Responsive Design",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+      "Seamlessly adapts to various devices and screen sizes through responsive design, ensuring an optimal user experience for learners on any device",
     image: image4,
   },
   {
     title: "Intuitive user interface",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+      "Our EDTech platform boasts an intuitive user interface, simplifying navigation and enhancing user engagement, ultimately fostering a seamless learning experience for all users.",
     image: image3,
   },
   {
     title: "AI-Powered insights",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+      "Through AI-powered insights, our EDTech platform offers personalized recommendations and deep analysis of user interactions, educators and learners.",
     image: image,
   },
 ];
