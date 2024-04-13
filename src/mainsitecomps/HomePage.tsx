@@ -11,7 +11,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
-
+import { Loader } from "lucide-react";
+import LoaderCOmp from "./Loader";
 const HomePage = () => {
   const [courses, setCourses] = useState([]);
   const [recommendations,setRecommendations]=useState([]);
@@ -52,7 +53,16 @@ const HomePage = () => {
                 </div>
               </Link>
             ))}
-            {courses.length === 0 && <p>No courses opted yet.</p>}
+            {courses.length === 0 && (
+              <div
+                style={{
+                  width: "100px",
+                  margin: "auto",
+                }}
+              >
+                <LoaderCOmp />
+              </div>
+            )}
           </div>
         </div>
         <br></br>
@@ -76,7 +86,16 @@ const HomePage = () => {
                 </div>
               </Link>
             ))}
-            {courses.length === 0 && <p>No courses opted yet.</p>}
+            {courses.length === 0 && (
+              <div
+                style={{
+                  width: "100px",
+                  margin: "auto",
+                }}
+              >
+                <LoaderCOmp />
+              </div>
+            )}
           </div>
         </div>
         <br></br>
@@ -96,7 +115,16 @@ const HomePage = () => {
                 </div>
               </Link>
             ))}
-            {courses.length === 0 && <p>No courses opted yet.</p>}
+            {courses.length === 0 && (
+              <div
+                style={{
+                  width: "100px",
+                  margin: "auto",
+                }}
+              >
+                <LoaderCOmp />
+              </div>
+            )}
           </div>
         </div>
       </div>
