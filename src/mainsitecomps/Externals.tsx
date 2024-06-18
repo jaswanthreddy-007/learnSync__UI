@@ -54,6 +54,7 @@ const External = () => {
 
     if (confirmSubmission) {
       try {
+        console.log(answers)
         const response = await fetch("http://127.0.0.1:5000/submit-answers", {
           method: "POST",
           headers: {
@@ -132,8 +133,10 @@ const External = () => {
                         type="text"
                         placeholder="Type Here"
                         value={answers[index]}
-                        onChange={(e) =>
+                        onChange={(e) =>{
+                          console.log(answers)
                           handleAnswerChange(index, e.target.value)
+                        }
                         }
                         className="bg-gray-800"
                       />
